@@ -1,16 +1,27 @@
-<h1>Articles</h1>
+<nav>
+  <ul>
+    <li><h1> Articles</h1></li>
+  </ul>
+</nav>
 
-Our blog has <%= Article.public_count %> articles and counting !!!
+<div class="container-fluid">
+  <div style="maring: 10px">
+    <hgroup>
+      <h3>Our blog has <%= Article.public_count %> articles and counting !!!
+      </h3>
+    </hgroup>
+    <% @articles.each do |article| %>
+      <% unless article.archived? %>
+        <details open >
+          <summary href="<%= article_path(article) %>" > <%= article.title %> </summary>
+          <p> <%= article.body %> </p>
+          <a href="<%= article_path(article) %>" >show more </a>
+        </details>
+      <% end %>
+    <% end %> <br>
+    <%= link_to "New article cute person", new_article_path %>
+  </div>
+</div>
 
-<ul>
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-    <li>
-      <a href="<%= article_path(article) %>" >
-      <%= article.title %>
-    </li>
-    <% end %>
-  <% end %>
-</ul>
 
-<%= link_to "New article madafaka", new_article_path %>
+
