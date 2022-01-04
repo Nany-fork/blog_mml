@@ -1,28 +1,31 @@
 <h1>New Article</h1>
-
 <%= form_with model: @article do |form| %>
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% @article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+<form >
 
-  <div>
-      <%= form.label :status %><br>
+  <!-- Grid -->
+  <div class="grid">
+
+    <!-- Markup example 1: input is inside label -->
+    <label for="Title">
+      Title
+      <%= form.text_field :title %>
+    </label>
+
+    <label for="Status">
+      Status
       <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+    </label>
+
   </div>
 
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-    <% @article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+  <!-- Markup example 2: input is after label -->
+  <label for="body">Body</label>
+  <%= form.text_area :body %><br>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  
+  <%= form.submit %>
+
+</form>
+
 <% end %>
+
