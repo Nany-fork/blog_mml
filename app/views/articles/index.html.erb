@@ -13,7 +13,7 @@
     <% @articles.each do |article| %>
       <% unless article.archived? %>
         <details open >
-          <summary href="<%= article_path(article) %>" > <%= article.title %> </summary>
+          <summary href="<%= article_path(article) %>" > <%= article.title %> by <%= article.user.name %></summary>
           <p> <%= article.body %> </p>
           <a href="<%= article_path(article) %>" >show more </a>
         </details>
