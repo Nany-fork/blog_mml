@@ -1,23 +1,14 @@
-
-
-
-
-
-
-<div class="container-fluid">
-  <div>
-    <h1><%= @article.title %></h1>
-    <p><%= @article.body %></p>
-    <ul>
-    <li><%= link_to "Edit", edit_article_path(@article) %></li>
-    <li><%= button_to "Destroy", article_path(@article), method: :delete %></li>
-    </ul>
-  </div>
-  <div>
-  <h2>Comments</h2>
-  <%= render @article.comments %>
-
-  <h2>Add a comment:</h2>
-  <%= render 'comments/form' %>
-  </div>
+<div class="container">
+  <article>
+    <header><%= @article.title %></header>
+      <%= @article.body %> <br> <br>
+      <details open>
+        <summary>Comments</summary> 
+        <ul>
+          <li><%= render @article.comments %></li>
+        </ul>
+      </details>
+  </article>
+      <%= render 'comments/form' %>
 </div>
+

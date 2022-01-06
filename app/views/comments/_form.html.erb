@@ -1,21 +1,24 @@
 <%= form_with model: [ @article, @article.comments.build ] do |form| %>
-    <p>
-      <%= form.label :commenter %><br>
-      <%= form.text_field :commenter %>
-    </p>
-   
-    <p>
-      <%= form.label :body %><br>
-      <%= form.text_area :body %>
-    </p>
+    <form >
+      <div class="container-fluid">
+        <h2>Add a comment:</h2>
+        <label for="Comenter">
+            <%= form.label :commenter %><br>
+            <%= form.text_field :commenter %>
+        </label>
 
-    <p>
-      <%= form.label :status %><br>
-      <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-    </p>
-   
-    <p>
-      <%= form.submit %>
-    </p>
+        <label for="Body">
+            <%= form.label :body %><br>
+            <%= form.text_area :body %>
+        </label>
+        
+        <label for = "Status">
+            <%= form.label :status %><br>
+            <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+        </label>
+        <%= form.submit %>
+      </div>
+</form>
   <% end %>
   
+

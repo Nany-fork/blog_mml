@@ -17,7 +17,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user = User.last
     if @article.save
-      redirect_to @article
+      redirect_to :root
     else
       render :new
     end

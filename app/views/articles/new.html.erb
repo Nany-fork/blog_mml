@@ -1,31 +1,29 @@
-<h1>New Article</h1>
+
 <%= form_with model: @article do |form| %>
-<form >
+    <form >
 
-  <!-- Grid -->
-  <div class="grid">
+      <!-- Grid -->
+      <div class="container-fluid">
+        <h1>New Article</h1>
+        <!-- Markup example 1: input is inside label -->
+        <label for="Title">
+          Title
+          <%= form.text_field :title %>
+        </label>
 
-    <!-- Markup example 1: input is inside label -->
-    <label for="Title">
-      Title
-      <%= form.text_field :title %>
-    </label>
+        <label for="Status">
+          Status
+          <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+        </label>
 
-    <label for="Status">
-      Status
-      <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-    </label>
-
-  </div>
-
-  <!-- Markup example 2: input is after label -->
-  <label for="body">Body</label>
-  <%= form.text_area :body %><br>
-
-  
-  <%= form.submit %>
-
-</form>
+        <label for="Body">
+          Body
+          <%= form.text_area :body %><br>
+        </label>
+      
+        <%= form.submit %>
+      </div>
+    </form>
 
 <% end %>
 
