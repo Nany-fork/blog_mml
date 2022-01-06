@@ -1,39 +1,41 @@
-<article data-theme="light">
-    <form>
-        <h1><strong>Create new user</strong> </h1> 
-        <div class="grid">
-            <label for="Name">
-                Name
-                <input type="text" id="name" name="name" placeholder="name" >
-            </label>
-            <fieldset>
-            <legend>Sex</legend>
-                <label for="small">
-                    <input type="radio" id="small" name="size" value="small" checked>
-                    Female
+
+<%= form_with model: @user do |form| %>
+    <article data-theme="light"> 
+        <form>
+            <h1><strong>Create new user</strong> </h1> 
+            <div class="grid">
+                <label for="Name">
+                    <%= form.label :name %>
+                    <%= form.text_field :name %>
                 </label>
-                <label for="medium">
-                    <input type="radio" id="medium" name="size" value="medium">
-                    Male
+                <fieldset>
+                <legend>Sex</legend>
+                    
+                        <%= form.radio_button :star, 'male' %> 
+                        Male
+                    
+                        <%= form.radio_button :star, 'female' %>
+                        Female
+                    
+                </fieldset>
+            </div>
+            <div class="grid">
+                <label for="Email">
+                    <%= form.label :email %>
+                    <%= form.text_field :email %>
+                </label>
+                <label for="Age">
+                    <%= form.label :age %>
+                    <%= form.text_field :age %>
+                </label>
+            </div>
+            <fieldset>
+                <label for="terms">
+                    <%= form.check_box :terms %>
+                        I agree to have fun in the blog
                 </label>
             </fieldset>
-        </div>
-        <div class="grid">
-            <label for="Email">
-                Email
-                <input type="text" id="email" name="email" placeholder="email" >
-            </label>
-            <label for="Age">
-                Age
-                <input type="text" id="age" name="age" placeholder="age" >
-            </label>
-        </div>
-        <fieldset>
-            <label for="terms">
-                <input type="checkbox" id="terms" name="terms">
-                    I agree to have fun in the blog
-            </label>
-        </fieldset>
-        <button>Create</button>
-    </form>
-</article>
+              <%= form.submit %>
+        </form>
+    </article>
+<% end %>
