@@ -1,8 +1,9 @@
 
-<%= form_with model: @user do |form| %>
+<%= render "nav/nav"%>
+<%= form_with model: @user do |form| %> 
     <article data-theme="light"> 
         <form>
-            <h1><strong>Create new user</strong> </h1> 
+            <h3><strong>Create new user</strong></h3> 
             <div class="grid">
                 <label for="Name">
                     <%= form.label :name %>
@@ -10,13 +11,10 @@
                 </label>
                 <fieldset>
                 <legend>Sex</legend>
-                    
-                        <%= form.radio_button :star, 'male' %> 
-                        Male
-                    
-                        <%= form.radio_button :star, 'female' %>
-                        Female
-                    
+                    <%= form.radio_button :sex, 'male' %> 
+                    Male
+                    <%= form.radio_button :sex, 'female' %>
+                    Female
                 </fieldset>
             </div>
             <div class="grid">
