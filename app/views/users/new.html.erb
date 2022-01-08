@@ -1,5 +1,4 @@
-
-<%= render "nav/nav"%>
+<%= render "nav/nav" %>
 <%= form_with model: @user do |form| %> 
     <article data-theme="light"> 
         <form>
@@ -11,9 +10,9 @@
                 </label>
                 <fieldset>
                 <legend>Sex</legend>
-                    <%= form.radio_button :sex, 'male' %> 
+                    <%= form.radio_button :sex, "male" %> 
                     Male
-                    <%= form.radio_button :sex, 'female' %>
+                    <%= form.radio_button :sex, "female" %>
                     Female
                 </fieldset>
             </div>
@@ -27,13 +26,8 @@
                     <%= form.text_field :age %>
                 </label>
             </div>
-            <fieldset>
-                <label for="terms">
-                    <%= form.check_box :terms %>
-                        I agree to have fun in the blog
-                </label>
-            </fieldset>
               <%= form.submit %>
         </form>
     </article>
 <% end %>
+

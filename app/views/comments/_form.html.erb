@@ -1,4 +1,4 @@
-<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+<%= form_with model: [@article, @article.comments.build] do |form| %>
     <form >
       <div class="container-fluid">
         <h2>Add a comment:</h2>
@@ -14,11 +14,11 @@
         
         <label for = "Status">
             <%= form.label :status %><br>
-            <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+            <%= form.select :status, ["public", "private", "archived"], selected: "public" %>
         </label>
         <%= form.submit %>
       </div>
 </form>
-  <% end %>
+<% end %>
   
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_06_050122) do
+ActiveRecord::Schema.define(version: 2022_01_08_034521) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
@@ -39,7 +39,6 @@ ActiveRecord::Schema.define(version: 2022_01_06_050122) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "sex"
     t.integer "age"
-    t.boolean "terms"
   end
 
   add_foreign_key "comments", "articles"
